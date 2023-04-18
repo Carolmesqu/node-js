@@ -1,0 +1,717 @@
+Sempre que vamos trabalhar com um projeto em Node.js do zero, uma das primeiras coisas que fazemos 
+é criar um arquivo package.json utilizando o comando npm init ou yarn init; assim como para todas 
+as instalações de libs externas utilizamos o comando npm install <nome do pacote> ou yarn add 
+<nome do pacote>.
+
+Ambos são gerenciadores de pacotes, sendo que NPM é acrônimo de Node Package Manager, ou Gerenciador 
+de Pacotes do Node.
+
+Mas o que são exatamente estes gerenciadores?
+Gerenciadores de pacotes são repositórios de código aberto nos quais devs disponibilizam soluções 
+para o uso da comunidade. Estas soluções nada mais são do que programas que outras pessoas desenvolveram 
+e que utilizamos para ganhar tempo no desenvolvimento de nosso próprio código, e vão desde libs 
+(bibliotecas) pequenas e específicas até frameworks com vários recursos prontos. E um pacote é como 
+chamamos o conjunto do código que determinada lib ou framework utiliza para executar.
+
+Algumas dessas bibliotecas são criadas por times de desenvolvimento para resolver algum problema 
+específico que tiveram que enfrentar. Depois elas são disponibilizadas para que outras pessoas com o mesmo 
+contratempo aproveitem e também utilizem. Outras são disponibilizadas por empresas de software que utilizam 
+as plataformas dos gerenciadores (o NPM e o YARN) para a distribuição de suas soluções de código. E sendo 
+de código aberto, isso significa que você também pode criar e publicar a sua lib para outras pessoas 
+baixarem e instalarem em seus projetos.
+
+Instalação local vs global
+Estes pacotes de código podem ser instalados localmente, estando disponíveis somente para o projeto no qual 
+foi instalado através da pasta node_modules, e globalmente, sendo instalados em um diretório geral do NPM e 
+ficando disponíveis para todos os projetos em seu computador, sem a necessidade de instalar separadamente em 
+cada projeto.
+
+Na maior parte das vezes, você vai utilizar a opção local, com os comandos npm install <nome do pacote> ou 
+yarn add <nome do pacote>, pois fica mais fácil fazer o gerenciamento de versão das libs que utilizamos e 
+muitas vezes, um pacote que instalamos “puxa” um ou vários outros pacotes auxiliares que ele precisa para 
+funcionar. O ideal é não poluir o diretório global com libs que poderão ser utilizadas em somente um projeto.
+
+Algumas libs e frameworks mais complexas vão solicitar que a instalação seja feita globalmente para funcionar. 
+Sempre vale a pena consultar a documentação de cada uma. Para fazer uma instalação global de pacotes, utilizamos 
+os comandos npm install -g <nome do pacote> ou yarn add global <nome do pacote>.
+
+A recomendação é que a instalação de pacotes seja feita sempre localmente (sem o -g) e que a instalação global 
+só seja feita em casos específicos - normalmente a documentação da ferramenta vai informar se isso é necessário.
+
+O NPM (https://docs.npmjs.com/) e o YARN(https://yarnpkg.com/) têm algumas pequenas diferenças nos comandos e na 
+forma como lidam com os pacotes. Você pode ler a documentação do NPM e do YARN para ter mais informações sobre 
+como os comandos funcionam em cada um.
+
+------------------------------------------------------------------------------------------------------------------
+
+O formato Markdown, com extensão .md, é uma linguagem de marcação para a escrita de textos com marcadores simples 
+de formatação que são convertidos em HTML. Hoje em dia utilizamos recursos do Markdown em plataformas de comunicação 
+e de streaming como o Slack e o Discord, além de ser a linguagem usada para arquivos README e em gerenciadores de 
+conteúdo, como os blogs.
+
+A vantagem do Markdown sobre o HTML é principalmente a legibilidade; os marcadores de formatação são simples e não 
+prejudicam a leitura do texto, o que não acontece com um texto 100% formatado com tags HTML.
+
+Se tiver curiosidade de conhecer mais a utilização desta linguagem, a documentação completa do Markdown está 
+disponível em inglês e também temos um artigo sobre Markdown em português sobre este assunto.
+
+------------------------------------------------------------------------------------------------------------------
+
+Hoje em dia é praticamente impossível desenvolver programas sem depender de bibliotecas ou frameworks desenvolvidos 
+por outras pessoas e empresas. Para facilitar o processo de baixar o código necessário e manter registros sobre 
+quais códigos externos são usados em um projeto, são utilizados os package managers (gerenciadores de pacotes) 
+como o NPM no caso do Node.js.
+
+Pacotes, módulos, dependências. Para o NPM são pacotes, porém no package.json são dependências. Qual a diferença 
+entre todos esses termos, afinal?
+
+Módulos e pacotes
+Um módulo serve para encapsular uma determinada funcionalidade, normalmente uma ou mais funções, “escondendo” sua 
+implementação do restante da aplicação e expondo somente o necessário para seu uso - por meio de uma função que 
+pode ser exportada para outras partes do código, por exemplo.
+
+Falamos com mais detalhes sobre o que são módulos neste artigo.
+
+Pacotes é como nos referimos aos módulos que são ou estão instalados em uma aplicação.
+
+Dependências
+Como o próprio nome diz, implica depender de algo. No caso, o programa que está sendo executado depende de outros 
+para funcionar.
+
+Ou seja, usamos este termo para especificar quais são os pacotes dos quais um programa depende para funcionar. 
+Então, quando falamos de dependências, estamos falando especificamente dos pacotes de terceiros que são utilizados 
+por um programa.
+
+Agora que esclarecemos um pouco mais os termos, você pode perceber que muitas vezes eles são utilizados de forma 
+intercambiável.
+
+------------------------------------------------------------------------------------------------------------------
+
+Um arquivo .js é entendido como um módulo independente e para trabalhar com esses módulos com o Node.js usamos as 
+palavras-chave export e import.
+
+R: Para ter acesso a algum recurso definido em outro módulo .js, utilizamos export para disponibilizar este recurso, 
+invocando-o no arquivo em que desejamos usá-lo com import.
+
+O Node.js também trabalha com outro formato de exportação de módulos, conhecido como CommonJS ou CJS, que utiliza a 
+função require() e o objeto global exports.
+
+R: O CJS é conhecido como a “forma do Node.js” fazer exportações e importações de módulos. Porém a partir do ES6 o 
+JavaScript passou a contar com uma maneira unificada de trabalhar com módulos, o EMS, que utiliza import e export.
+
+------------------------------------------------------------------------------------------------------------------
+
+Que para criar um projeto em Node.js utilizamos o comando npm init;
+
+Que o arquivo package.json é utilizado pelo Node.js para listar as dependências instaladas, além de informações 
+sobre versão do programa, autoria e scripts;
+
+Que as dependências (também chamadas de libs ou bibliotecas) são pacotes de código pronto que outras pessoas da 
+comunidade disponibilizam, e nós as utilizamos para executar tarefas específicas no código sem termos que reescrever 
+do zero;
+
+Que para deixar o código mais organizado podemos usar ferramentas de linting, além da importância delas para reforçar 
+estilo e também para prever possíveis bugs.
+
+------------------------------------------------------------------------------------------------------------------
+
+Sempre que falamos de promises no JS estamos falando de códigos assíncronos.
+Uma característica do JavaScript é ter várias maneiras de lidar com o mesmo problema. No caso da resolução de 
+promessas, existem dois métodos mais utilizados: o .then() e as palavras-chave async e await.
+
+------------------------------------------------------------------------------------------------------------------
+
+Durante o funcionamento de um sistema, algumas execuções podem não sair como o esperado. Por exemplo, quando 
+trabalhamos com uma aplicação web, podemos tentar acessar um link que esteja inválido, ou tentar salvar um 
+arquivo em um diretório sem ter permissão para isso. Sendo assim, podemos preparar o código para esperar 
+possíveis erros e tratá-los, o que pode ser feito no JavaScript usando a estrutura try...catch.
+
+No JavaScript o try...catch possibilita lidar com um erro identificando o trecho em que ele pode ocorrer 
+(try) e captando o erro (catch) para tratá-lo.
+
+R: O Javascript (assim como muitas outras linguagens) utiliza o bloco try para envolver o trecho de código que 
+pode gerar algum tipo de exceção e o bloco catch é o responsável por capturar a exceção (caso ocorra) e permitir 
+que seja “tratada”, retornando alguma mensagem informativa, executando alguma função específica, etc.
+
+------------------------------------------------------------------------------------------------------------------
+
+Durante a aula, aprendemos a utilizar os blocos try e catch, que são as ferramentas do JavaScript para “captura” 
+de exceções. Ou seja, qualquer erro ocorrido durante a execução do código no bloco try é tratado dentro do bloco 
+catch.
+
+Ainda existe um último bloco, o finally, que é executado sempre, independentemente da execução do código ter sido 
+resolvida no try ou gerado um erro passado para o catch. Tanto catch quanto finally são opcionais, mas o try deve 
+sempre estar acompanhado de um ou outro.
+
+Ao contrário do catch, o finally não recebe nenhum dado através dos parênteses ( ). Vamos demonstrar refatorando 
+a função feita durante a aula para adicionar este bloco:
+
+1) Na função pegaArquivo() adicionamos um bloco finally após o catch():
+
+async function pegaArquivo(caminhoDoArquivo) {
+ const encoding = 'utf-8';
+ try {
+   const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
+   console.log(chalk.green(texto))
+ } catch(erro) {
+   trataErro(erro);
+ } finally {
+
+ }
+}
+
+Lembrando que todo o código dentro do bloco finally sempre será executado. Não fará diferença se o processamento 
+tiver sido efetuado com sucesso (o código manteve-se dentro do bloco try) ou tiver gerado alguma exceção que foi 
+lançada ao bloco catch(). No caso acima, podemos acrescentar uma mensagem avisando o usuário que o programa 
+finalizou:
+
+async function pegaArquivo(caminhoDoArquivo) {
+ const encoding = 'utf-8';
+ try {
+   const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
+   console.log(chalk.green(texto))
+ } catch(erro) {
+   trataErro(erro);
+ } finally {
+   console.log(chalk.yellow('operação concluída'));
+ }
+}
+
+Teste o código e verá que a mensagem operação concluída vai ser exibida no console em ambos os casos.
+
+------------------------------------------------------------------------------------------------------------------
+
+Que podemos utilizar a lib fs (File System, ou sistema de arquivos) nativa do JavaScript para que o programa 
+consiga acessar e ler arquivos do computador;
+
+Que conseguimos capturar mensagens de erro enviadas pelo Node.js quando algo no programa não sai como o esperado 
+utilizando a palavra-chave throw, ou lançar;
+
+Que as “promessas” são a forma que o JavaScript utiliza para trabalhar com código assíncrono e que podemos 
+resolvê-las utilizando em conjunto as palavras-chave async e await ou o método .then().
+
+------------------------------------------------------------------------------------------------------------------
+
+Utilizando a expressão regular, quando inserimos por exemplo abc na expressão, ela vai tentar retornar abc
+quando queremos retornar as palavras que contem abc, devemos devemos escrever [abc] e ela vai retornar individualmente 
+onde aparece cada letra no texto. Caso não queira que apareça abc escrevemos [^abc] e com se dissemos pegue todos os caracteres 
+do texto com exceção de [^abc], caso queiramos pegar todas as letras que tem no texto colocamos [A-z], se fizermos [^A-z] vamos
+pegar apenas os caracteres especiais, para ver espaços em brancos utilizamos [\s], caso queiramos pegar os espaços em branco E
+a letra s [\ss], pra pegarmos os os colchetes que estão dentro do  no texto utilizamos [\[\]] envolvemos [] em outro [], para 
+pegar os colchetes e as informações que estão dentro dele e todos os items que tem no sistema da mesma forma de escrita 
+\[[\w\s]*?\], para capturarmos tudo que está dentro de colchete, temos que utilizar \[^[\]*?\] ele trás palavras, espaços e caracteres
+especiais \[^[\]*?\]. Para capturarmos tudo que está dentro de () no exemplo que estamos escrevendo, precisamos utilizar um 
+\(https?:\/\/[^\s?#.].[^\s]*\)
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Como vimos nesta aula, expressões regulares são objetos que mapeiam padrões de texto por meio de uma linguagem própria, com sintaxe 
+e regras específicas. Elas são uma ferramenta eficiente para resolver problemas de código que envolvem padrões e buscas textuais.
+
+Pode ser que você já conheça alguns dos meta-chars usados em expressões regulares sem saber. Por exemplo, quando procuramos no 
+campo de busca do computador por qualquer arquivo de extensão jpg com *.jpg. É claro que as expressões regulares podem ir de muito 
+simples até extremamente complexas, então você não precisa se preocupar em decorar todos os meta-chars ou como eles se comportam; 
+sempre é possível consultar sites como regex101 ou o guia do MDN.
+
+Cada linguagem de programação desenvolve seu próprio interpretador de expressões regulares; no caso do JavaScript podemos usar // e 
+salvar o padrão em uma variável, como foi feito nos vídeos, ou utilizar o construtor new RegExp():
+
+const regex = /[a-zA-z\s]/;
+
+ou
+
+let regex = new RegExp("[a-zA-z\s]");
+
+Para trabalhar com as regex em nosso código, podemos utilizar alguns métodos próprios de string, como matchAll() (que usamos no vídeo), 
+search(), replace(), match() e split(). Você pode consultar mais sobre estes métodos no MDN. Além disso, o JavaScript também tem alguns 
+métodos próprios do objeto RegExp: test() e exec(). Vamos entender mais sobre o exec() durante este curso, mas você também pode ler a 
+respeito deles aqui.
+
+------------------------------------------------------------------------------------------------------------------
+
+Depois de trabalharmos com expressões regulares, é bem comum pensarmos em validações de formulário como um possível 
+uso.
+
+Embora seja uma opção válida, já existem algumas libs para validação de formulários com JavaScript - você se lembra 
+de que há muitas libs para automatizar tarefas comuns em programação?
+
+A validação de formulários é uma das tarefas que podem consumir muito tempo para desenvolver desde o início e normalmente 
+não são features, ou seja, funcionalidades de um produto. Então, usamos as libs para focar nas partes mais importantes do 
+desenvolvimento.
+
+Validações são importantes tanto no lado do front-end quanto do back-end. Você pode conferir duas libs para isso, Joi e Yup, 
+e suas documentações com exemplos de uso. A Joi tem um ambiente de testes que ajudam a visualizar melhor como utilizar os 
+métodos dessa lib.
+
+------------------------------------------------------------------------------------------------------------------
+
+Expressões regulares são usadas para identificar e capturar padrões de caracteres. Avalie o trecho da música 
+Meu pequeno Cachoeiro do compositor Raul Sampaio, a seguir:
+
+Eu passo a vida recordando
+De tudo quanto aí deixei
+Cachoeiro, cachoeiro
+Vim pro rio de janeiro
+P'ra voltar e não voltei!
+Mas te confesso na saudade
+As dores que arranjei pra mim
+Pois todo o pranto destas mágoas
+Ainda irei juntar nas águas
+Do teu itapemirim
+Meu pequeno cachoeiro
+Vivo só pensando em ti
+Ai que saudade dessas terras
+Entre as serras
+Doce terra onde eu nasci!
+
+Agora, com base nisso, marque a alternativa da regex válida para encontrar o texto Cachoeiro ou cachoeiro na letra.
+
+R: É isso mesmo! Usamos duas vezes o meta-char ? para prever ocorrências da letra c tanto maiúscula quanto minúscula, 
+seguida da cadeia achoeiro.
+
+------------------------------------------------------------------------------------------------------------------
+
+Podemos pensar nos usos mais diversos para as expressões regulares. Além dos mecanismos de busca, pode ser utilizada 
+uma certa expressão para buscar e substituir trechos de textos e palavras, validação de campos de entrada de dados 
+(por exemplo, formatos de CEP e CPF), raspagem de dados e inclusive em um recurso super útil de editores de código 
+como o Visual Studio Code, que é o realce de sintaxe (syntax highlighting) - quando o editor identifica com cores 
+diferentes as diversas partes do código, como funções, strings e variáveis.
+
+Vamos praticar mais um pouco? Ao invés de capturar todos os links completos, dessa vez vamos capturar apenas a 
+parte do protocolo e do domínio principal de cada link, por exemplo <protocolo>://<dominioprincipal.com>/. Você 
+pode usar o regex101 como fizemos na aula, e o mesmo texto que está sendo trabalhado no curso.
+
+Montando a expressão
+Começamos observando os padrões na sequência que queremos capturar: todos os links começam da mesma forma, a 
+partir de http, e terminam na primeira /. Então podemos começar a expressão dessa forma:
+
+https?: a sequência exata de letras http e s ocorrendo de 0 até 1 vez.
+
+Em seguida temos :// que sempre ocorre da mesma forma:
+
+https?:\/\/: como / é um meta-char, temos que usar a barra invertida para “escapar” este char, ou seja, para 
+que seja considerado literalmente e não como meta-char.
+
+A primeira classe, ou seja, o primeiro conjunto de caracteres antes do ., permanece o mesmo que usamos na aula:
+
+https?:\/\/[^\s$.?#].: todos os caracteres exceto $, ., ?, # e sem espaços em branco \s.
+
+Agora a expressão deve parar que capturar os caracteres logo após a primeira /, então a segunda classe de 
+caracteres vai ficar um pouco diferente:
+
+https?:\/\/[^\s$.?#].[^\s\)]: após o ponto, todos os caracteres com exceção de \s (espaços em branco) e 
+fechamento de parênteses \) serão capturados pela expressão. Lembrando que ) deve ser “escapado” para ser 
+considerado como um caractere e não um meta-char.
+
+Agora podemos finalizar:
+
+https?:\/\/[^\s$.?#].[^\s\)]*: acrescentamos * ao final, para que a expressão localize 0 ou mais 
+ocorrências consecutivas entre . e ). Ou seja, para que a expressão localize tanto https://dominio.com/ quanto 
+https://www.dominio.com.br/ ou http://www.outrodominio.com.br/recurso/recurso.
+
+------------------------------------------------------------------------------------------------------------------
+
+Como utilizar expressões regulares, uma sintaxe feita para reconhecer padrões de texto, para capturar links e URLs;
+
+Como utilizamos classes e grupos de expressões regulares para refinar a busca por estes padrões, além dos métodos 
+que o JavaScript tem (por exemplo match e exec) para trazer os resultados e trabalhar com eles;
+
+Manipular os resultados extraídos do texto através de expressões regulares e montar um objeto de retorno utilizando 
+a sintaxe do JavaScript e desestruturação de objetos com o spread operator ....
+
+------------------------------------------------------------------------------------------------------------------
+
+Quando começamos a programar é essencial conhecer a estrutura de pastas e arquivos e saber como “navegar” por esta 
+estrutura. Muitas vezes descobrimos que aquele bug estranho aconteceu porque cometemos algum erro no caminho ou (path) 
+de algum arquivo, apesar de editores de texto como o Visual Studio Code ajudarem com o recurso de autocompletar.
+
+Um caminho é onde se localiza um arquivo ou diretório (que também chamamos de pasta) no sistema de arquivos de um 
+sistema operacional. é importante diferenciar caminho relativo de caminho absoluto, além de como acessá-los.
+
+Caminho absoluto
+
+Chamamos de caminho absoluto quando a localização de um arquivo ou pasta é especificado a partir do 
+diretório-raiz do sistema operacional. Por exemplo:
+
+#caminho para um diretório (a última / é opcional)
+/home/juliana/Documents/alura/projeto-js
+
+#caminho para um arquivo dentro do diretório
+/home/juliana/Documents/alura/projeto-js/index.js
+
+Caminho relativo
+
+Um caminho relativo para um diretório ou arquivo é definido a partir de sua relação com o pwd, ou seja, o present 
+working directory (diretório de trabalho atual). Na linha de comando, pwd também é o comando print working directory 
+(imprimir o diretório de trabalho), que usamos justamente para saber onde na estrutura do sistema operacional 
+se encontra o diretório em que estamos.
+
+Veja no exemplo abaixo uma representação em árvore de um diretório como o do curso em que estamos trabalhando (
+  o diretório node_modules foi excluído para facilitar a leitura, pois é muito extenso):
+
+/home/juliana/Desktop/curso-js
+.
+├── curso-js
+│   ├── arquivos
+│   │   └── texto1.md
+│   ├── package.json
+│   ├── package-lock.json
+│   └── src
+│       ├── cli.js
+│       ├── http-validate.js
+│       └── index.js
+
+Na representação acima, consideramos como pwd o diretório curso-js. Então, o caminho relativo do arquivo texto1.md, 
+por exemplo, seria ./arquivos/texto1.md, e o caminho absoluto seria /home/juliana/Desktop/curso-js/arquivos/texto1.md.
+
+Na estrutura de diretórios, o . representa “aqui”. Quando queremos sair do diretório atual e “voltar” um nível, 
+utilizamos ... Por exemplo:
+
+/home/juliana/Desktop/curso-js
+.
+├── curso-js
+│   ├── arquivos
+│   │   └── texto1.md
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── src
+│   │   ├── cli.js
+│   │   ├── http-validate.js
+│   │   └── index.js
+│   └── test
+│       └── index.test.js
+
+Se quisermos referenciar um módulo no arquivo ./src/index.js a partir do arquivo ./test/index.test.js, a importação seria 
+feita da seguinte forma:
+
+// arquivo ./test/index.test.js
+
+const moduloImportado = require(‘../src/index.js’)
+
+Usamos o .. para “subir um nível” na hierarquia de diretórios para só então “entrar” no diretório que queremos. Dessa forma, 
+não precisamos referenciar o caminho absoluto de todos os arquivos quando fizermos importações de módulos; o que também 
+funcionaria, mas não é tão prático.
+
+Outra diferença importante entre caminho absoluto e relativo é com relação à execução de programas a partir da linha de 
+comando. Por exemplo, usando a árvore de diretórios acima, o comando node index.js só funcionaria caso o diretório atual 
+(pwd) no terminal já fosse /home/juliana/Desktop/curso-js/src. Por outro lado, o comando node 
+/home/juliana/Desktop/curso-js/src/index.js funcionaria independentemente do diretório atual no terminal, pois o Node.js vai 
+acessar o arquivo index.js a partir de seu caminho absoluto.
+
+O terminal é uma ferramenta poderosa. Além de executar comandos e rodar programas, com ele podemos fazer tudo que fazemos com 
+as janelas e ícones do sistema operacional como navegar entre diretórios (ou pastas), criar arquivos, mudá-los de lugar e 
+renomeá-los, dentre outras tarefas.
+
+Pratique os comandos para ir ganhando agilidade e para ficar confortável com o sistema de arquivos e diretórios. Além disso, 
+temos um curso focado no uso do terminal para Linux, porém os comandos podem ser utilizados no Windows com a ferramenta GitBash 
+(que pode ser instalada automaticamente junto com o Git) e também no terminal nativo do MacOs.
+
+------------------------------------------------------------------------------------------------------------------
+
+É bem comum, durante o desenvolvimento de qualquer código, recebermos erros e termos que lidar com eles. 
+Felizmente tanto o Node.js quanto os navegadores estão prontos para interpretar estes erros e nos retornar 
+informações úteis sobre eles, o que ajuda a resolver os (muitos) erros que podem acontecer.
+
+Vamos ver uma lista de alguns erros comuns e como o Node.js nos avisa deles:
+
+ENOTFOUND
+Error: not found - Retorna quando o Node.js tenta estabelecer uma conexão com um servidor e a tentativa 
+falha no DNS lookup; ou seja, ou o host não existe ou há algum erro no endereço fornecido, que não 
+consegue ser resolvido pelo DNS.
+
+Algumas das soluções possíveis: verifique se a URL fornecida realmente existe e se a string com a URL 
+está sendo fornecida da forma correta para a função ou método que fará a conexão.
+
+ENOENT
+Error: no entity - Como vimos no curso, muitas vezes acontece quando um caminho especificado, seja 
+um diretório ou um arquivo, não existe no sistema de arquivos. Neste caso, temos que verificar se 
+o caminho fornecido está correto.
+
+Importante: algumas operações com fs requerem o uso do caminho absoluto de um arquivo ou diretório. 
+Para “montar” a string com estes caminhos, você pode utilizar uma das libs mais comuns do Node.js, 
+a path.
+
+EISDIR
+Error: is a directory - O caminho fornecido é um diretório. Normalmente vemos este erro quando o 
+programa esperava receber um caminho de um arquivo, mas ao invés disso recebeu um diretório. 
+Novamente, devemos verificar a string recebida pela função ou método para conferir se está 
+completa e montada da forma correta.
+
+ENOTDIR
+Error: not a directory - é o contrário do erro anterior, quando o programa espera receber 
+o caminho de um diretório mas recebe o caminho de um arquivo.
+
+EADDRINUSE
+Error: address already in use - Muitas vezes este erro acontece quando estamos iniciando ou 
+reiniciando um servidor web. Ele indica que o servidor está tentando se conectar a uma porta 
+lógica que já está sendo ocupada por outro programa.
+
+Você pode conferir mais sobre servidores web e portas de conexão em nosso curso de 
+fundamentos do HTTP.
+
+ECONNREFUSED
+Error: connection refused - Houve uma tentativa de envio de requisição a um endpoint, 
+porém a conexão foi recusada. Normalmente é causada por inatividade do serviço que está 
+sendo requisitado.
+
+ECONNRESET
+Error: connection reset - Uma conexão em andamento foi fechada durante o processo de 
+requisição-resposta, antes que a resposta fosse recebida. Pode ser causada por um 
+timeout ou reinício do servidor.
+
+------------------------------------------------------------------------------------------------------------------
+
+A lista completa de erros pode ser conferida aqui, direto na documentação do Node.js.
+
+Quando desenvolvemos com Node.js e precisamos capturar algum comando inserido no terminal, temos a propriedade 
+process.argv, que nos retorna uma array de strings com a instalação do Node.js e o caminho do arquivo .js em 
+execução nas duas primeiras posições.
+
+Imagine que vamos usar o terminal para inserir um comando que deve receber a flag --execute e em seguida o argumento
+now e assinale a opção que indica como recuperar cada parte do comando.
+
+R: Como o resultado da execução do process.argv é um array, podemos utilizar process.argv[2] e process.argv[3], 
+respectivamente, para recuperar as instruções --execute e now.
+
+Por se tratar de um array de strings podemos capturar o retorno das posições 2 e 3 normalmente.
+
+------------------------------------------------------------------------------------------------------------------
+
+A utilizar a interface de linha de comando e como aplicamos a lib process do Node.js para capturar e utilizar os 
+dados informados no terminal em nosso código;
+
+A organizar o código separando em arquivos as funções que lidam com entrada e saída de dados das funções que 
+processam os links;
+
+Como fazer estes diversos arquivos conversarem entre si através da exportação e importação de módulos com 
+import e export;
+
+Que scripts são instruções que usamos para automatizar tarefas e como escrever nossos próprios scripts, incluí-los 
+no arquivo de configuração package.json e utilizá-los para executar comandos no terminal.
+
+------------------------------------------------------------------------------------------------------------------
+
+Objetos são estruturas importantes em praticamente todas as linguagens de programação utilizadas comercialmente. 
+São estruturalmente formados por pares de chave: valor que podem representar alguma abstração do mundo real, 
+como uma conta bancária ou um livro. Os objetos também são parte fundamental do JavaScript e há diversas formas 
+de se criar e trabalhar com eles.
+
+Sabendo disso, marque as opções corretas, a seguir:
+
+Para iterar sobre as propriedades de um objeto, podemos utilizar a função for...in 
+
+Utilizamos for…in para iterar sobre as propriedades enumeráveis de um objeto, como em: for (let info in cliente)
+{ //código }. Você pode conferir mais exemplos no MDN.
+
+Na criação de um objeto em JavaScript, podemos usar o operador new para criar um objeto, como em const objeto 
+= new Objeto().
+
+No JavaScript utilizamos o operador new para criar instâncias de objetos, inclusive do próprio objeto Object.
+
+------------------------------------------------------------------------------------------------------------------
+
+Você pode ter percebido, durante o projeto, que pegar os argumentos da linha de comando através de posições 
+no array pode deixar o projeto um pouco “engessado”. Por exemplo, o que aconteceria se o usuário passasse 
+os argumentos em outra ordem? E se quisermos adicionar argumentos e flags para funcionalidades adicionais? 
+Fazer o gerenciamento dessas informações direto pelo array do process.argv começa a não parecer tão prático.
+
+A boa notícia é que sim, existe uma biblioteca para lidar com isso! Inclusive a própria documentação do 
+Node.js indica o uso de uma biblioteca externa para gerenciar os argumentos e flags da linha de comando, 
+chamada yargs. Sua funcionalidade básica é capturar os comandos do CLI e convertê-los em um objeto, assim 
+os argumentos não dependem mais de estarem na posição correta de um array para funcionar.
+
+Não utilizamos o yargs no curso, mas você pode fazer a implementação em seu projeto.
+
+------------------------------------------------------------------------------------------------------------------
+
+publicação no NPM:
+
+Agora que a versão 1.0.0 da lib está fechada, você pode publicá-la, se quiser.
+
+É possível publicar no NPM para que a biblioteca possa ser instalada com npm install -g <nome-lib>.
+
+Preparando os arquivos da lib
+Antes de fazer a publicação, temos que adicionar o ambiente para execução da lib.
+
+Na linha 1 do arquivo cli.js, antes de tudo (inclusive das importações), adicione o seguinte código:
+
+#!/usr/bin/env nodeCOPIAR CÓDIGO
+Ela aparecerá no código como comentário, o que é normal.
+
+Esta linha, que sempre inicia com os caracteres #!, é o que chamamos de shebang. Quando adicionamos 
+esta linha a um arquivo que será executado através do terminal, estamos instruindo o sistema 
+operacional sobre qual é o tipo de arquivo que será executado e de qual forma (no caso, estamos 
+falando do Node.js).
+
+O shebang só é interpretado por sistemas do tipo Unix, como distribuições Linux e MacOs. Sistemas 
+Windows ignoram este tipo de comando, mas mesmo assim ele é necessário para que a instalação da lib 
+e dos arquivos necessários do Node.js seja feita de forma correta.
+
+Você pode também acrescentar um arquivo README.md na raiz do repositório e na branch main de seu 
+projeto no GitHub. Este arquivo serve para informar aos usuários do que se trata o projeto e 
+como utilizá-lo.
+
+Publicando no NPM
+1) Crie uma conta no NPM;
+
+2) Faça o login através da linha de comando do terminal com npm add-user. Você precisará do seu 
+nome de user registrado no NPM e da senha que você utilizou para criar a conta (passo 1). Se der 
+tudo certo, você verá no terminal a mensagem Logged in as <seu nome de user> 
+on https://registry.npmjs.org/.
+
+3) Você precisará atualizar o package.json com todas as informações necessárias:
+
+name: Você precisará de um nome único para identificar sua lib no repositório do NPM. 
+A recomendação é que seja um nome curto (se possível) e fácil de lembrar que não tenha js no 
+nome, uma vez que isso está implícito - já que estamos utilizando o Node Package Manager. 
+Você pode verificar quais nomes já estão em uso pesquisando no próprio site do NPM;
+
+version: Para a primeira publicação, a versão deve ser 1.0.0. Para as próximas - caso você 
+queira fazer atualizações - veja mais instruções abaixo;
+
+description: String com descrição da funcionalidade. Serve para ajudar outras pessoas que buscam 
+por libs no NPM;
+
+keywords: um array de strings com palavras-chave relativas à lib, também para facilitar a busca. 
+Por exemplo: [‘markdown’, ‘URL’];
+
+homepage: String com a URL do projeto no GitHub, ou outra página que você quiser informar 
+(sua página pessoal de portfólio, por exemplo);
+
+bugs: Um objeto com o contato para usuários reportarem bugs. Deve seguir o formato:
+
+ "bugs": {
+   "url" : "https://github.com/<seu-user>/<nome-projeto>/issues",
+   "email" : "email@seu-email.com"
+ },COPIAR CÓDIGO
+Caso queira informar somente ou a url ou o email, não é preciso o objeto, apenas uma 
+string: ”bugs”: “string com o e-mail ou link do GitHub”,
+
+license: Permissões e restrições de uso que você queira aplicar à sua lib. Você pode 
+consultar a lista ou deixar a padrão, ISC.
+
+author: String com suas informações, conforme o modelo: "Seu Nome <email@sem-email.com> 
+(http://seusite.com/)". O email e o site são opcionais;
+
+main: String com o caminho do ponto de entrada da sua aplicação. No caso, será ./cli.js.
+
+bin: Este campo não aparece por padrão no package.json, você terá que criá-lo. É um objeto 
+no qual você deve definir como chave o termo que será usado para executar sua lib pela 
+linha de comando, e como valor o caminho para o entrypoint, ou seja, o arquivo que é o 
+ponto de entrada da aplicação - no caso, o ./cli.js. Por exemplo:
+
+"bin": {
+   "<nome-da-lib>": "./cli.js"
+ },COPIAR CÓDIGO
+Seguindo o exemplo acima, para a execução da lib na linha de comando o usuário deverá 
+inserir o comando nome-da-lib ./caminho/do/arquivo.md.
+
+Em vez de nome-da-lib você pode utilizar outro termo, porém é padrão que seja o mesmo 
+nome da lib para evitar confusões e ficar mais fácil de lembrar.
+
+"preferGlobal": true,: Booleano com o valor true. Uma vez que o propósito desta lib é ser 
+executada a partir do terminal e consultar listas de arquivos que podem estar em qualquer 
+diretório, faz mais sentido que ela seja instalada globalmente por padrão. Desta forma, 
+é possível executá-la a partir de qualquer diretório, não apenas no diretório onde ela 
+foi instalada.
+
+Existem vários outros campos com todas as informações que podem ou não ser pertinentes 
+a um projeto em Node.js. Você pode consultar a lista completa aqui, mas com os campos 
+acima já é possível publicar sua lib.
+
+O package.json para publicação ficará semelhante ao abaixo:
+
+{
+ "name": "nome-lib",
+ "version": "1.0.0",
+ "description": "sua descrição",
+ "keywords": ["markdown", "URL"],
+ "main": "./cli.js",
+ "bin": {
+   "<nome_da_lib>": "./cli.js"
+ },
+ "preferGlobal": true,
+ "scripts": {
+   "test": "jest ./test",
+   "cli": "node ./src/cli.js"
+ },
+ "repository": {
+   "type": "git",
+   "url": "git+https://github.com/<seu-user>/<seu-repo>.git"
+ },
+ "author": "Juliana Amoasei",
+ "license": "ISC",
+ "bugs": {
+   "url": "https://github.com/<seu-user>/<seu -repo>/issues"
+ },
+ "homepage": "https://github.com/<seu -user>/<seu-repo>#readme",
+ "dependencies": {
+   "chalk": "^4.1.2",
+   "node-fetch": "^2.6.1"
+ },
+ "devDependencies": {
+   "jest": "^27.0.6"
+ }
+}COPIAR CÓDIGO
+4) Publique sua lib com o comando npm publish;
+
+5) Confira no site do NPM! https://www.npmjs.com/package/<nome-da-lib>;
+
+6) Instale em seu sistema com o comando npm install -g <nome-da-lib> (veja que a instalação
+ está sendo feita localmente com a flag -g);
+
+7) Teste se está tudo Ok executando a lib com o comando nome-da-lib caminho/do/arquivo.md.
+
+Lembre-se que o caminho do arquivo pode ser relativo ao diretório de onde você está 
+executando a lib, ou absoluto.
+
+Novas versões
+O NPM trabalha com o conceito de versionamento semântico. Você já deve ter visto que as 
+sequências numéricas das versões de todas as dependências que usamos (inclusive o próprio 
+Node.js e o NPM) seguem o mesmo padrão de três números separados por pontos, por exemplo 
+1.0.0 (a versão inicial que o package.json cria) ou 14.17.5 (última versão recomendada do 
+Node.js no momento em que este texto foi escrito). O que significa cada número desta sequência?
+
+O versionamento semântico utiliza os seguintes critérios:
+
+O primeiro número da sequência (o 14 em 14.17.5) se refere a breaking changes, ou seja, 
+atualizações de versão que têm potencial para “quebrar” códigos que utilizem as versões 
+anteriores. Ou seja, uma aplicação que utiliza códigos (métodos, funções, etc) da versão 
+13.X.X de determinada lib pode deixar de funcionar com a versão 14.X.X, pois haverá diferenças 
+significativas entre as versões. Estas atualizações são conhecidas como major.
+
+O número do meio (o 17 em 14.17.5) se refere a novas funcionalidades adicionadas, mas que não 
+causam “quebra” em relação a códigos das versões anteriores. Este tipo de atualização é 
+conhecida como minor.
+
+O último número (o 5 em 14.17.5) se refere a correção de código: resolução de bugs, 
+melhoramento de performance ou alterações similares que não alteram as funcionalidades atuais 
+(ou exceção da correção de bugs) e nem introduzem novas. É conhecida como patch.
+
+Atualizando a lib no NPM
+Se você fizer alterações no código da sua lib após o curso e quiser atualizar a versão no NPM, 
+verifique de acordo com a lista acima qual é o tipo de atualização e rode o comando npm version 
+<patch | minor | major>, escolhendo apenas uma das três opções de acordo com o tipo de atualização. 
+Por exemplo, caso você esteja atualmente na versão 1.0.0, após rodar npm version patch você 
+deverá receber no terminal a mensagem v.1.0.1 e o valor também já estará alterado no package.json.
+
+Após este processo, você pode atualizar o repositório do NPM com o comando npm publish.
+
+Atenção: o repositório da sua lib no GitHub precisa estar atualizado para o comando npm version 
+funcionar.
+
+Se quiser saber mais sobre versionamento semântico, você pode consultar a documentação aqui.
+
+Este é um guia básico para a primeira publicação, mas você sempre pode consultar a documentação 
+sobre publicação do NPM para ver todas as opções.
+
+------------------------------------------------------------------------------------------------------------------
+
+Como utilizar acessar URLs com a API fetch e manipular os dados devolvidos, como o código de status HTTP;
+
+Utilizar o método Promise.all para acessar de forma assíncrona um array de URLs e receber o resultado;
+
+Que a API fetch é baseada no conceito de promessas em JavaScript, e nessa aula vimos como utiliza o 
+async/await para resolver as promessas e garantir que o código seja executado de forma assíncrona, 
+retornando os resultados.
