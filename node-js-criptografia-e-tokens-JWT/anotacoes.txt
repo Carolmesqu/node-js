@@ -1,0 +1,335 @@
+    José estava utilizando sua conta em uma rede social e queria editar a publicação que um colega havia feito. 
+    Ele tentou editar mas não conseguiu, pois era informado que ele não tinha permissão. Analisando este cenário 
+    e diante os conceitos apresentados no durante a nossa aula, marque as alternativas que melhor explicam os 
+    motivos pelo qual José não conseguiu editar a publicação do colega.
+
+    R: Autenticação, pois José não tinha as credenciais do colega e não conseguiu provar que era ele.
+    Isso mesmo! José precisaria entrar na conta do colega para fazer as ações por ele, ou seja, realizar o processo 
+    de autenticação em nome do colega.
+    Autorização, pois por padrão não é possível editar as publicações de uma outra pessoa.
+    Isso mesmo! Como dito no enunciado, José não tinha a autorização para fazer edições nas publicações do colega.
+_______________________________________________________________________________________________________________________
+
+    Elias copiou a função de cifrar mensagem realizada na nossa aula, porém ele alterou a senha secreta e o número 
+    de     deslocamentos que serão feitos em cada letra da senha. Agora, ele necessita da sua ajuda para saber o 
+    que será retornado.
+
+    const senhaSecreta = "alura";
+
+    function cifrarMensagem (mensagem, movimentos){
+    const mensagemCifrada = mensagem.split('').map((caractere) => {
+    const codigoCaractere = caractere.charCodeAt(0);
+    return String.fromCharCode(codigoCaractere + movimentos)
+    })
+    return mensagemCifrada.join("")
+    }
+
+    const mensagemCifrada = cifrarMensagem(senhaSecreta, 4);
+
+    console.log(mensagemCifrada)
+
+    Analisando os trechos de código acima, podemos afirmar que a string retornada será:
+    
+    R: epyve. Isso mesmo! Todos os deslocamentos foram analisados corretamente.
+
+_______________________________________________________________________________________________________________________
+
+    Nesta aula falamos sobre a Cifra de César, que foi o método usado por Júlio César para criptografar as mensagens 
+    mandadas por ele, garantindo um maior sigilo e segurança das informações. A cifra de César consiste em substituir 
+    cada letra da mensagem pela letra que está três posições depois dela na ordem alfabética.
+
+    Exemplo:
+
+    |     VERSÃO ORIGINAL    | A | L | U | R | A |
+    |:----------------------:|:-:|:-:|:-:|:-:|:-:|
+    | CIFRA DE CÉSAR ( 3 → ) | D | O | Z | U | D |
+
+    Por ser um método criado há mais de dois mil anos, hoje em dia não é considerado tão seguro. Porém, estudar a 
+    prática da Cifra de César faz parte da construção do pensamento lógico e ajuda no entendimento base sobre 
+     e segurança no uso de dados para o desenvolvimento de aplicações.
+
+    A arte de criptografar e codificar faz parte da nossa história e essa prática não ficou de fora nas evoluções 
+    tecnológicas; por isso que, quando os computadores foram criados, a programação foi pensada como uma forma 
+    que facilitasse a comunicação entre pessoas e máquinas.
+
+    Daí surgiu a necessidade de codificar essa comunicação. Cada caractere que utilizamos para passar instruções ao 
+    computador, sejam letras, números, símbolos, até mesmo espaços e aspas, é interpretado no computador como uma 
+    sequência numérica de 0 ou 1, configurando a quantidade de 8 bits, que é a quantidade de memória consumida por 
+    cada caractere no computador.
+
+    A codificação mais antiga é a tabela ASCII, mas não contemplava toda diversidade de letras e símbolos para cada 
+    sistema de escrita. Daí, especialmente após a popularização da internet, surgiu a necessidade de um padrão de 
+    caracteres que englobasse todos os sistemas de escrita. Depois de várias criações de novos padrões, surge o 
+    Unicode e os padrões UTF, UTF-12, UTF-32 e UTF-8.
+
+    Você pode conhecer a tabela ASCII e mergulhar em conhecimento no mundo da linguagem dos códigos binários 
+    conferindo nosso artigo sobre Sistema e Código Binário.
+
+    Usando os métodos charCodeAt() e fromCharCode()
+    O charCodeAt() é um método usado para retornar o número que indica o valor Unicode do caractere no índice 
+    especificado.
+
+    Sintaxe:
+
+    string.charCodeAt(index)COPIAR CÓDIGO
+    O parâmetro index deve ser um inteiro igual ou maior que 0 e menor que o comprimento da string. Quando não for 
+    um número o padrão será 0.
+
+    Vamos observar o charCodeAt() na prática. Criamos uma variável mensagem e testamos em duas versões, a primeira 
+    versão recebe um valor string “A” (maiúscula), a segunda recebe um valor string “a” (minúscula):
+
+    Exemplo 1:
+
+    const mensagem = "A";
+
+    let codAscii = mensagem.charCodeAt(0);
+
+    console.log(codAscii); // 65COPIAR CÓDIGO
+    Exemplo 2:
+
+    const mensagem = "a";
+
+    let codAscii = mensagem.charCodeAt(0);
+
+    console.log(codAscii); // 97
+
+    Percebemos que a letra “A” retorna valores diferentes para maiúscula e minúscula. Isso porque o valor 
+    retornado do charCodeAt() será sempre um número que representa o valor de unidade de código UTF-16, e na 
+    tabela ASCII as letras maiúsculas e minúsculas tem posições e valores diferentes.
+
+    Agora vamos para outro exemplo, dessa vez usamos um laço de repetição for para fazer a leitura e conversão 
+    da string “ALURA”. Vamos analisar a estrutura do código e o resultado.
+
+    Exemplo 1:
+
+    const mensagem = "ALURA";
+
+    for (let i = 0; i < mensagem.length; i++) {
+    console.log(mensagem.charCodeAt(i));
+    }COPIAR CÓDIGO
+    O retorno esperado no terminal, ao executarmos o código, será:
+
+    65
+    76
+    85
+    82
+    65
+
+    Nesse código, criamos um laço de repetição for e colocamos entre parênteses 3 expressões:
+
+    let i = 0: Criamos uma variável “i’ com valor atribuído 0. Essa variável é criada no início do laço e 
+    serve para o controle dos índices da string a cada loop. o valor dela será usado para passar para 
+    charCodeAt() o índice correspondente à cada caractere;
+    i < mensagem.length: Condição de parada do laço. A cada início de loop o programa verifica se o 
+    resultado desta comparação é true ou false e executa o código dentro do loop enquanto retornar true;
+    i++ : O operador ++ é usado para incrementar o valor de i ao final de cada loop.
+    Em resumo, criamos um laço de repetição que faz a leitura de uma string e exibe no terminal as posições 
+    de cada letra na tabela Unicode. Lembra do parâmetro index, na sintaxe do charCodeAt()? Ele tem a função 
+    de localizar cada caractere da string na tabela Unicode para que seja retornado o valor correspondente. 
+    O tipo string pode ser considerado como um array de caracteres, então cada letra é acessada como um índice 
+    deste array.
+
+    Exemplo 2:
+
+    | Letra         | A | L | U | R | A |
+    |---------------|:-:|:-:|:-:|:-:|:-:|
+    | Posição array | 0 | 1 | 2 | 3 | 4 |
+    
+    Para reverter a conversão que fizemos, ou até mesmo criar valores do tipo string, utilizamos um outro método 
+    chamado fromCharCode(); ele possibilita retornar uma string criada ao utilizarmos a sequência de valores unicode 
+    de cada letra.
+
+    Sintaxe:
+
+    String.fromCharCode(num)
+    String.fromCharCode(num1, num2)
+    String.fromCharCode(num1, num2, …, NumN)
+    
+    Os parâmetros utilizados devem ser sequências numéricas de valores UTF-8, os valores variam entre 0 a 65535 em 
+    números decimais (ou 0xFFFF em hexadecimal).
+
+    Vamos criar um código usando o método fromCharCode(), dessa vez para converter a mensagem passada no exemplo 
+    anterior.
+
+    Exemplo 3:
+
+    const mensagemDecimal = String.fromCharCode(65, 76, 85, 82, 65);
+    console.log(mensagemDecimal);COPIAR CÓDIGO
+    O retorno esperado no terminal, ao executarmos o código, será: “ALURA”
+
+    Exemplo 4:
+
+    const mensagemHexa = String.fromCharCode(0x41, 0x4C, 0x55, 0x52, 0x41);
+    console.log(mensagemHexa);
+    
+    O retorno esperado no terminal, ao executarmos o código, será: “ALURA”
+
+    O mesmo processo de laço de repetição usado no exemplo anterior também pode ser usado neste caso. Faça o teste!
+
+    Atenção: o termo string é interpretado de forma diferente pelo JavaScript nos casos string.charCodeAt(index) e 
+    String.fromCharCode(num). No primeiro caso (em minúsculas), string se refere a uma sequência de caracteres, como 
+    por exemplo ”ALURA”. No segundo caso (com S maiúsculo), String se refere ao que chamamos de objeto global String. 
+    Você pode conferir mais informações sobre o objeto String na documentação do MDN.
+
+_______________________________________________________________________________________________________________________
+
+    A linguagem em si é um código, uma maneira de transmitir uma mensagem; ou seja, é a forma mais comum de 
+    comunicação. Mas e nos casos em que essa mesma mensagem não pode ser acessada por qualquer pessoa?
+
+    Por meio de códigos!
+
+    Mas... a linguagem já não é um código?
+
+    Sim, a nossa forma de comunicação já é um código que transmite informações. No entanto, algumas informações, 
+    principalmente em contexto de conflitos, não podem estar disponíveis para qualquer pessoa. Nesse sentido, ocultar 
+    informações valiosas era um instrumento de guerra e, para isso, fazia-se necessário construir um novo código 
+    para comunicação, que só pudesse ser acessado por quem conhecesse o seu “segredo” (o que chamamos, aqui, de 
+    “chave”).
+
+    A partir dessa premissa, começa a se desenvolver o que atualmente chamamos de criptografia - palavra originada 
+    do grego e significa algo como “escrita oculta”. A técnica consiste basicamente em ocultar mensagens através de 
+    códigos e se tornou um campo de estudo sólido. Embora a criptografia moderna e sua aplicação na tecnologia da 
+    informação por meio de computadores seja algo novo, a prática de ocultar informações através de códigos vem de 
+    longa data, de cerca de 4.000 anos.
+
+    Desde então, possuímos inúmeras técnicas para criptografar informações. De forma geral, há duas formas de 
+    ocultar uma mensagem, através de códigos ou através das chamadas cifras, que se consolida como uma técnica 
+    muito mais eficiente e segura.
+
+    As técnicas de cifragem podem ser agrupadas em:
+
+    Cifras de Transposição: método que consiste na ordenação diferente de letras de uma mesma mensagem. Por 
+    exemplo, podemos cifrar o nome “CAMILA” por “ALIAMC”.
+    Um exemplo clássico é a Cifra ADFGVX.
+
+    Cifras de Substituição: esse método criptográfico opera, como o próprio nome sugere, a partir da substituição 
+    de letras, pares ou grupos de letras em um sistema pré-estabelecido. Em outras palavras, nas cifras de 
+    substituição, a mensagem continua na mesma ordem mas as unidades de textos são alteradas. Há alguns 
+    sub-grupos de cifras de Substituição, vamos conferir?
+    Cifra de Substituição simples, monoalfabética: a Cifra de César é o principal exemplo;
+    Substituição homófona: aqui cada letra do alfabeto pode ser substituída por mais de um caractere ou símbolo;
+    Substituição polialfabética: vários alfabetos podem ser utilizados para cifrar a mensagem, e atua como várias 
+    cifras de substituições simples. Uma dos exemplos mais famosos é a “Cifra Indecifrável”, a “Cifra de Vigenère”;
+    Substituição poligráfica, ou polígramos: criação de mensagens incompreensíveis para quem não sabe o padrão 
+    da cifra, que consiste na substituição do texto por um conjunto de caracteres. Um exemplo clássico é a Cifra 
+    de Hill;
+    Substituição mecânica: uma das formas mais famosas na história contemporânea. A substituição de letras e 
+    números através de rotores e circuitos eletrônicos ficou muito famosa na segunda guerra mundial com a máquina 
+    Enigma. Você pode até testar como a máquina funciona com esse simulador: Simulador da Enigma em JavaScript.
+
+_______________________________________________________________________________________________________________________
+
+    Durante a aula, implementamos uma versão “resumida” da Cifra de César e nas atividades vimos um pouco mais sobre o 
+    funcionamento dos métodos charCodeAt() e fromCharCode().
+
+    Porém, para o algoritmo dessa cifra funcionar corretamente, precisamos de um pouco de refatoração. Vamos lá?
+
+    O problema com a cifra
+    Se utilizarmos o código que vimos em aula para cifrar, por exemplo, "BANANA" com offset (ou seja, deslocamento) de 
+    1 casa, não teremos problema, pois avançando apenas 1 casa - ou seja, 1 letra - o número seguinte na tabela ASCII 
+    ainda será uma letra. Por exemplo:
+
+    | letra                | B  | A  | N  | A  | N  | A  |
+    |----------------------|----|----|----|----|----|----|
+    | posição original     | 66 | 65 | 78 | 65 | 78 | 65 |
+    | posição com offset 1 | 67 | 66 | 79 | 66 | 79 | 66 |
+    | resultado            | C  | B  | O  | B  | O  | B  |COPIAR CÓDIGO
+    Porém, o que aconteceria se a palavra fosse "ZUMBA" e o offset fosse 6 ao invés de 1?
+
+    | letra                | Z  | U  | M  | B  | A  |
+    |----------------------|----|----|----|----|----|
+    | posição original     | 90 | 85 | 77 | 66 | 65 |
+    | posição com offset 6 | 96 | 91 | 83 | 72 | 71 |
+    | resultado            | `  | [  | S  | H  | G  |COPIAR CÓDIGO
+    Agora parte das letras (Z e U que estão no fim do alfabeto) se transformaram em caracteres que não são letras, 
+    o que normalmente não é o que queremos quando usamos a cifra. O que está acontecendo então?
+
+    A Cifra de César tem, originalmente, um mecanismo próprio para ser usado na decifragem e que faz essa “volta” 
+    do Z para o A e que pode ser traduzida para um modelo matemático - você pode conferir o modelo neste site e 
+    um exemplo de aplicação em JavaScript neste vídeo:
+
+    A partir disso, podemos aplicar o modelo matemático em nosso código para criar duas funções, uma para cifrar 
+    e outra para decifrar.
+
+    Começando pela criação da função, que vai receber como parâmetro o offset/deslocamento e também a string de 
+    texto a ser cifrada, além de uma variável let resultado para guardar o resultado e o retorno da variável no fim 
+    da função:
+
+    function cifrar(offset, mensagem) {
+    let resultado = "";
+
+    return resultado;
+    }COPIAR CÓDIGO
+    Agora podemos criar um laço de repetição e aplicar o que vimos anteriormente sobre o método charCodeAt(). 
+    Dentro do laço, a primeira coisa é verificar se o caractere é uma letra maiúscula (ou seja, está no intervalo entre 
+    65 e 90 da tabela ASCII) ou minúscula (intervalo entre 97 e 122 da tabela ASCII). Se não for nenhum destes casos, 
+    como um espaço ou algum caractere especial, este não será cifrado:
+
+    function cifrar(offset, mensagem) {
+    let resultado = "";
+    for (let i = 0; i < mensagem.length; i++) {
+        let codLetraAscii = mensagem.charCodeAt(i);
+        if (codLetraAscii >= 65 && codLetraAscii <= 90) {
+        // código
+        } else if (codLetraAscii >= 97 && codLetraAscii <= 122) { 
+        // código
+        } else {
+        //código
+        }
+    }
+    return resultado;
+    }COPIAR CÓDIGO
+    Agora vamos aplicar o modelo matemático que vimos no link e no vídeo para fazer a cifra:
+
+    function cifrar(offset, mensagem) {
+    let resultado = "";
+    for (let i = 0; i < mensagem.length; i++) {
+        let codLetraAscii = mensagem.charCodeAt(i);
+        if (codLetraAscii >= 65 && codLetraAscii <= 90) {
+        let calculoOffset = ((codLetraAscii - 65 + offset) % 26) + 65;
+        resultado += String.fromCharCode(calculoOffset);
+        } else if (codLetraAscii >= 97 && codLetraAscii <= 122) { 
+        let calculoOffset = ((codLetraAscii - 97 + offset) % 26) + 97;
+        resultado += String.fromCharCode(calculoOffset);
+        } else {
+        resultado += String.fromCharCode(codLetraAscii); 
+        }
+    }
+    return resultado;
+    }COPIAR CÓDIGO
+    Vamos agora executar a função duas vezes, com os parâmetros "BANANA" e "ZUMBA":
+
+    console.log(cifrar(1, “BANANA”)); //CBOBOB
+    console.log(cifrar(6, “ZUMBA”)); //FASHGCOPIAR CÓDIGO
+    Agora nossa função retorna apenas letras.
+
+    Para decifrar o código, façamos o percurso inverso:
+
+    function decode(offset, mensagem) {
+    let resultado = "";
+    for (let i = 0; i < mensagem.length; i++) {
+        let codLetraAscii = mensagem.charCodeAt(i);
+        if (codLetraAscii >= 65 && codLetraAscii <= 90) {
+        let calculoOffset = ((codLetraAscii - 90 - offset) % 26) + 90;
+        resultado += String.fromCharCode(calculoOffset);
+        } else if (codLetraAscii >= 97 && codLetraAscii <= 122) {
+        let calculoOffset = ((codLetraAscii - 122 - offset) % 26) + 122;
+        resultado += String.fromCharCode(calculoOffset);
+        } else {
+        resultado += String.fromCharCode(codLetraAscii);
+        }
+
+    }
+    return resultado;
+    }
+
+_______________________________________________________________________________________________________________________
+
+    As origens da criptografia e seus primeiros usos, isto é, sua utilização na comunicação militar e aplicações em 
+    conflitos;
+    Os conceitos e utilização das cifras, em especial a cifra de césar, que poderia ser realizada facilmente sem um 
+    poder computacional muito avançado;
+    Quais são os usos atuais que dependem da criptografia, tal qual sistemas de mensageria e armazenamento de 
+    informação;
+    A diferença entre Autorização e autenticação, isto é, a capacidade de confirmar uma permissão e identidade, 
+    respectivamente.
