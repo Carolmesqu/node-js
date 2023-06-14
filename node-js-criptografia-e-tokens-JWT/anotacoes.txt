@@ -333,3 +333,569 @@ ________________________________________________________________________________
     informação;
     A diferença entre Autorização e autenticação, isto é, a capacidade de confirmar uma permissão e identidade, 
     respectivamente.
+
+_______________________________________________________________________________________________________________________
+
+    Existem dezenas de algoritmos de hash e cada um pode funcionar de maneira um pouco diferente. Mas em todos eles é 
+    fornecida uma entrada e o programa a altera para uma outra forma.
+
+Abaixo estão alguns algoritmos que são referenciados com relativa frequência quando falamos sobre algoritmos de 
+hash criptográfico.
+
+MD5: Este é um dos primeiros algoritmos a obter ampla aprovação. Ele foi projetado em 1991 por Ronald Rivest e, 
+na época, foi considerado extremamente seguro. Desde então, hackers descobriram como decodificar o algoritmo e 
+podem fazê-lo em segundos. A maioria dos especialistas acha que não é seguro para uso generalizado, pois é muito 
+fácil de ser desmontado.
+
+As colisões contra MD5 podem ser calculadas em segundos, o que torna o algoritmo inadequado para a maioria dos casos 
+de uso em que um hash criptográfico é necessário. MD5 produz um resumo de hash de 128 bits (16 bytes).
+
+SHA: Os algoritmos da família SHA (Secure Hash Algorithms) são considerados mais seguros. As primeiras versões foram 
+desenvolvidas pelo governo dos Estados Unidos, mas outros programadores se basearam nas estruturas originais e 
+tornaram as variações posteriores mais rigorosas e mais difíceis de quebrar. Em geral, quanto maior o número após 
+as letras "SHA", mais recente o lançamento e mais complexo o programa.
+
+Por exemplo, o SHA-3 inclui fontes de aleatoriedade no código, o que o torna muito mais difícil de decifrar do 
+que os anteriores. Tornou-se um algoritmo de hash padrão em 2015 por esse motivo.
+
+SHA-0: É uma função hash criptográfica, projetada pela Agência de Segurança Nacional (NSA) dos Estados Unidos, 
+que fornece um hash de 160 bits. O SHA-0 foi retirado logo após a publicação devido a uma "falha significativa" 
+não revelada e substituído pela versão ligeiramente revisada SHA-1.
+
+A descoberta de fraquezas no design do SHA-0 foi atribuída à NSA, e em 1998 foi confirmado por Antoine Joux e 
+Florent Chabaud um ataque teórico que permite obter uma colisão entre dados criptografados utilizando SHA-0.
+
+SHA-1: SHA-1 (Secure Hash Algorithm 1) é uma função de dispersão criptográfica (ou função hash criptográfica) 
+projetada pela Agência de Segurança Nacional (NSA) dos Estados Unidos e é um Padrão Federal de Processamento 
+de Informação dos Estados Unidos publicado pelo Instituto Nacional de Padrões e Tecnologia (NIST).
+
+SHA-1 utiliza ao todo um valor de 160 bits, que é equivalente a 20 bytes, para a dispersão criptográfica. Por 
+causa desses valores, a criptografia SHA-1 é conhecida como resumo da mensagem. Cada valor de dispersão do SHA-1 
+é visto dentro do método como um número hexadecimal constituído por 40 dígitos.
+
+Publicada em 1995, SHA-1 é muito similar à SHA-0, mas altera a especificação de dispersão para corrigir as 
+fraquezas alegadas. Entretanto, em 2005, criptoanalistas descobriram ataques sobre SHA-1, sugerindo que o algoritmo 
+poderia não ser seguro o suficiente para uso continuado. O NIST exigiu que várias aplicações utilizadas em agências 
+federais mudassem para SHA-2 depois de 2010 devido à fraqueza descoberta.
+
+SHA-2: SHA-2 (Secure Hash Algorithm 2) é um conjunto de funções de hash criptográficas projetadas pela Agência de 
+Segurança Nacional dos Estados Unidos (NSA), publicadas pela primeira vez em 2001. O SHA-2 inclui mudanças 
+significativas em relação ao seu antecessor, o SHA-1, no qual foram encontradas fraquezas.
+
+A família SHA-2 consiste em seis funções de hash com resumos (valores de hash) que são SHA-224, SHA-256, SHA-384, 
+SHA-512, SHA-512/ 224, SHA-512/256. Elas são construídas com o intuito de serem muito resistentes à colisão.
+
+SHA-256: Esse algoritmo faz parte da família de algoritmos SHA 2 e é uma das mais famosas e seguras funções de hash 
+criptográfica. Publicado em 2001, foi um esforço conjunto entre a NSA (Agência de Segurança Nacional) e o NIST
+(Instituto Nacional de Padrões e Tecnologia) dos EUA para introduzir um sucessor da família SHA 1, que aos poucos estava 
+perdendo força contra ataques de força bruta. SHA-256 produz um resumo de hash de 128 bits (32 bytes).
+
+A título de curiosidade, o Bitcoin utiliza SHA-256 duplo, o que significa que aplica o SHA-256 duas vezes nos dados 
+para garantir ainda mais segurança.
+
+SHA-3: SHA-3 (Secure Hash Algorithm 3) foi lançado pelo NIST (Instituto Nacional de Padrões e Tecnologia) dos EUA 
+em 5 de agosto de 2015, ele é o mais recente membro da família de padrões Secure Hash Algorithm.
+
+O SHA-3 não se destina a substituir o SHA-2, pois nenhum ataque significativo ao SHA-2 foi demonstrado. Por causa 
+dos ataques bem-sucedidos ao MD5, SHA-0 e SHA-1, o NIST percebeu a necessidade de um hash criptográfico diferente e 
+alternativo, que se tornou SHA-3, que embora faça parte da mesma série de padrões, é internamente diferente da 
+estrutura semelhante a MD5, SHA-1 e SHA-2 .
+
+SHA-3 fornece os mesmos tamanhos de saída que SHA-2: 224, 256, 384 e 512 bits.
+
+RIPEMD-160: é uma função de hash criptográfica de 160 bits. Ele destina-se a ser usado como uma substituição para as 
+funções de hash MD4, MD5 e RIPEMD de 128 bits. Embora as funções RIPEMD sejam menos populares que SHA-1 e SHA-2 , 
+elas são usadas, entre outras, em Bitcoin e outras criptomoedas baseadas em Bitcoin.
+
+RIPEMD160 ainda não foi quebrado, mas foi substituído pelos algoritmos de hash SHA-256 e SHA-512 e suas classes 
+derivadas. SHA256 e SHA512 oferecem melhor segurança e desempenho do que RIPEMD160. Utilize RIPEMD160 apenas para 
+compatibilidade com aplicativos e dados herdados.
+
+BLAKE3: é uma função de hash criptográfica, anunciada em 9 de janeiro de 2020, que se caracteriza por ser muito mais 
+rápida que MD5, SHA-1, SHA-2, SHA-3 e BLAKE2 (sua antecessora), além de ser mais segura, ao contrário de MD5 e SHA-1, 
+que são rápidas porém menos seguras.
+
+Ela foi projetada para aplicações como verificação de integridade de arquivos, autenticação de mensagens e geração de 
+dados para assinaturas digitais criptográficas. O BLAKE3 não foi projetado para hash de senhas, pois visa calcular 
+hashes o mais rápido possível (para senhas, é recomendável utilizar as funções bcrypt, scrypt ou Argon2).
+
+O tamanho da saída padrão do BLAKE3 é 256 bits.
+
+_______________________________________________________________________________________________________________________
+
+    Beatriz está desenvolvendo um sistema que requer a autenticação de usuários e decidiu fazer a seguinte 
+    implementação para armazenar as credenciais de seus usuários:
+
+    class Usuario {
+   constructor(nome, senha){
+       this.nome = nome;
+       this.senha = senha;
+        }
+    }
+
+    Considerando o que vimos até agora no curso, qual afirmativa melhor reflete sobre as práticas utilizadas?
+
+    Beatriz não está utilizando as melhores práticas para o armazenamento de senhas. Guardar algum tipo de hash da 
+    senha seria mais apropriado.
+
+    Isso! Não é interessante guardar a senha e segredos do usuário diretamente em texto plano. Existem diversas maneiras 
+    de evitar que isso aconteça, como por exemplo: utilizar algum tipo de hash.
+
+_______________________________________________________________________________________________________________________
+
+Leticia estava fazendo uma plataforma web junto com suas colegas. Ela ficou com as tarefas de desenvolver o código por 
+trás das páginas de login e de cadastro de usuário. Quando ela terminou os códigos, as colegas perceberam que ela estava 
+utilizando a função MD5 sem “sal” para fazer o hash das senhas dos usuários, então as colegas à contextualizaram sobre o 
+ataque rainbow table e a importância de utilizar o “sal” na função de hash para dificultar esse ataque. Marque a alternativa 
+que representa o motivo pelo qual o “sal” na função de hash ajuda a prevenir o ataque rainbow table.
+
+Por ser aleatório e modificar toda e qualquer senha, o “sal” na função de hash faz com que senhas iguais tenham hashes 
+diferentes, fazendo com que atacantes não consigam realizar o ataque de rainbow table por não identificar senhas a partir 
+de hashes gerados, pois toda senha terá um hash diferente. Isso dificulta muito o ataque por fazer com que os atacantes 
+tenham que adivinhar não mais apenas a senha, como também o “sal” utilizado para gerar a hash da senha, acarretando em 
+infinitas combinações extremamente difíceis de serem acertadas.
+
+
+Isso mesmo! O “sal” na função de hash ajuda prevenir o ataque rainbow table por fazer com que toda senha, até mesmo 
+senhas iguais, tenham hashes diferentes, impossibilitando ataques que utilizam listas de hashes para descobrir senhas 
+a partir de hashes iguais. Além de fazer com que atacantes tenham que adivinhar não só mais a senha, como também o 
+“sal” aleatório utilizado para realizar o hash da senha.
+
+_______________________________________________________________________________________________________________________
+
+Nessa aula, você aprendeu:
+O que são funções de hash e seu funcionamento prático para gerar dados que não podem ser restaurados à seu valor original;
+Quais são algumas de suas aplicações práticas, como o uso em sistemas de autenticação;
+A implementar os métodos do módulo crypto, como o createHash;
+Como utilizar o “sal” para melhorar a eficácia das hashes, aumentando drasticamente a quantidade de possibilidades existentes 
+para um algoritmo de encriptação.
+
+_______________________________________________________________________________________________________________________
+
+Alexandre está tentando implementar um sistema de envio de mensagens onde apenas as duas partes que estão se comunicando 
+consigam ler as mensagens. Ele decidiu utilizar funções de hash para criptografar as mensagens antes do envio, mas não 
+está conseguindo decifrá-las quando elas chegam no destinatário. Por que isso está acontecendo e o que poderíamos sugerir 
+para ele com o que vimos até agora no curso?
+
+As mensagens não podem ser decifradas facilmente, pois as funções de hash são feitas apenas para encriptar mensagens. Uma 
+solução viável seria utilizar funções de encriptação simétrica, para que seja possível desencriptar as mensagens.
+
+Exatamente! Vimos que as hashes são feitas para não serem revertidas. Logo, para ter uma encriptação ou cifra, precisamos 
+utilizar outros métodos.
+
+_______________________________________________________________________________________________________________________
+
+Um aluno chamado Caio decidiu colocar à prova o que foi visto até aqui no curso e fez um sistema de comunicação segura 
+utilizando a encriptação simétrica. Ele chamou a colega Nayara para testar o sistema e ela conseguia decifrar as mensagens 
+apenas observando o tráfego de informação na rede. Como isso foi possível e qual solução o Caio pode implementar para 
+mitigar esse problema?
+Nayara pode ter obtido a chave compartilhada observando o tráfego de rede e utilizado essa chave para desencriptar as 
+comunicações que ocorreram. Caio, por sua vez, pode utilizar uma implementação de criptografia assimétrica e não 
+compartilhar a chave privada durante as comunicações.
+
+
+É isso aí! Utilizando o conceito de encriptação assimétrica que vimos na aula podemos trafegar informação sem ter que 
+transmitir a chave responsável por desencriptar os dados. Assim, não é possível descobrir muitas informações relevantes 
+apenas observando a rede.
+
+_______________________________________________________________________________________________________________________
+
+Os métodos de encriptação e desencriptação do módulo crypto são essenciais para a criação de chaves com NodeJS. Nesse 
+sentido, vamos nos aprofundar sobre a estrutura dos métodos?
+
+Método crypto.createCipheriv()
+O método crypto.createCipheriv() funciona como uma interface embutida no módulo crypto que retorna um objeto Cipher 
+com os parâmetros do algoritmo, a chave e o vetor de inicialização (iv - do inglês “Initialization Vector”).
+
+A sintaxe é:
+
+crypto.createCipheriv(algoritmo, chave, iv, opcoes)COPIAR CÓDIGO
+Percebemos então que o método aceita quatro parâmetros:
+
+algoritmo: é um dado do tipo string que está interligado com a biblioteca de implementação dos protocolos SSL e TLS, a 
+OpenSSL . Alguns dos exemplos foram utilizados no curso, como aes256 ou rsa. Nas versões mais recentes da OpenSSL o 
+comando no terminal openssl list -cipher-algorithms mostra os algoritmos de cifra disponíveis.
+chave (key): é a chave bruta usada pelo algoritmo e vetor de inicialização. A chave pode ser um KeyObject ou do tipo 
+secret.
+iv: o vetor de inicialização que é responsável por fornecer um estado inicial. O iv precisa ser único ou imprevisível. 
+O ideal é que seja criptografado de forma aleatória e não precisa ser secreto. Caso não necessite de um vetor de 
+, o iv pode ser do tipo null.
+options (opções): o último parâmetro é um argumento opcional, que pode alterar o modo de operação da função, definindo 
+algumas configurações específicas.
+Método crypto.createDecipheriv()
+O método crypto.createDecipheriv() funciona de forma bem similar ao createCipheriv(). No entanto, a interface retorna 
+um objeto Decipher e os parâmetros são os mesmos. Sua sintaxe é:
+
+crypto.createDecipheriv( algoritmo, chave, iv, opcoes)COPIAR CÓDIGO
+Método crypto.generateKeyPairSync()
+O método crypto.generateKeyPairSync() também funciona como uma interface do módulo crypto. Porém, cria um novo e 
+assimétrico par de chaves do tipo especificado que retorna um objeto com uma private key e public key que pode 
+ser uma string, buffer ou KeyObject. Sua sintaxe é:
+
+crypto.generateKeyPairSync( type, options)COPIAR CÓDIGO
+O método aceita dois parâmetros, que são:
+
+type (tipo): É do tipo string e deve incluir um ou mais dos seguintes algoritmos: ‘rsa’, ‘dsa’, ‘ec’, ‘ed25519’, 
+‘ed448’, ‘x25519’, ‘x448’, ou ‘dh’.
+
+options (opções): É do tipo objeto. Ele pode conter os parâmetros modulusLength; publicExponent; divisorLength; 
+namedCurve; prime; primeLength; generator; groupName; publicKeyEncoding; privateKeyEncoding.
+
+A documentação oficial do NodeJS fornece vários métodos e apresenta seus pormenores. Consulte a documentação 
+oficial e conheça um pouco mais!
+
+https://nodejs.org/api/crypto.html#crypto_crypto_createcipheriv_algorithm_key_iv_options
+
+_______________________________________________________________________________________________________________________
+
+Pretty Good Privacy (PGP), em português “privacidade muito boa”, é um sistema de criptografia utilizado para enviar 
+e-mails criptografados e criptografar arquivos confidenciais. Desde sua invenção em 1991, por Phil Zimmermann, o PGP 
+se tornou o padrão de fato para segurança de e-mail. Além de criptografar e descriptografar emails, o PGP também é 
+utilizado para assinar mensagens para que o receptor possa verificar a identidade do remetente, assim como a 
+integridade do seu conteúdo, tendo assim a comprovação de que arquivos ou e-mails não foram modificados por terceiros.
+
+A criptografia PGP utiliza uma combinação de duas formas de criptografia: criptografia de chave simétrica e criptografia 
+de chave pública, em conjunto com combinação serial de hashing e compressão de dados, e cada passo utiliza algum dos vários 
+algoritmos suportados. PGP usa uma chave privada que deve ser mantida secreta e uma chave pública que o receptor e 
+remetente têm que compartilhar quando trocam mensagens.
+
+Phil Zimmermann criou a primeira versão da criptografia PGP em 1991. O nome "Pretty Good Privacy" foi inspirado no nome 
+de um supermercado, "Ralph's Pretty Good Grocery", apresentado na cidade fictícia do apresentador de rádio Garrison Keillor, 
+Lake Wobegon. Esta primeira versão incluía um algoritmo de chave simétrica que Zimmermann havia projetado por si mesmo, 
+chamado BassOmatic.
+
+Zimmermann era um ativista antinuclear de longa data e criou a criptografia PGP para que pessoas com pensamentos 
+semelhantes pudessem utilizar Bulletin Board Systems (BBSs) com segurança e armazenar mensagens e arquivos com segurança.
+
+A popularidade do PGP se deu por dois fatores. O primeiro é que o sistema estava originalmente disponível como freeware 
+e, portanto, se espalhou rapidamente entre os usuários que desejavam um nível extra de segurança para suas mensagens de 
+e-mail. O segunda é que, como o PGP utiliza criptografia simétrica e criptografia de chave pública, ele permite que usuários 
+que nunca se encontraram enviem mensagens criptografadas entre si sem trocar chaves de criptografia privadas.
+
+Como funciona?
+O PGP utiliza uma variação do sistema de chave pública. Neste sistema, cada usuário tem uma chave de criptografia que é 
+conhecida publicamente e uma chave secreta ou privada que é conhecida apenas por aquele usuário. Os usuários criptografam 
+uma mensagem que enviam para outra pessoa utilizando a chave PGP pública dessa pessoa. Quando o destinatário recebe a mensagem, 
+ele a descriptografa usando sua chave privada.
+
+Então, é assim que o PGP funciona. Você tem uma chave pública (para bloquear/criptografar a mensagem) e uma chave privada (para 
+desbloquear/descriptografar a mensagem). Caso fosse utilizar, você enviaria a chave pública a todos os seus amigos para que eles 
+pudessem criptografar as mensagens confidenciais que desejam enviar para você, e depois de receber uma mensagem criptografada, 
+você utilizaria a sua chave privada para descriptografá-la.
+
+Ilustração demonstrando os processos de encriptação e desencriptação de arquivos e sua transmissão. O esquema visual mostra 1. 
+arquivo bruto > 2. sua encriptação com a chave pública > 3. Arquivo encriptado > 4. Email ou FTP. ; Abaixo há o processo de 
+desencriptação, onde o 1.email ou FTP > 2. recebe o arquivo encriptado> 3. utiliza a chave privada para desencriptação> 4. 
+finaliza com o arquivo bruto
+
+Fonte: https://www.freecodecamp.org/
+
+O PGP ainda é seguro?
+
+É impossível dizer que qualquer método de criptografia específico é 100% seguro. Dito isto, o PGP é geralmente considerado 
+extremamente seguro. O sistema de duas chaves, as assinaturas digitais e o fato de o PGP ser de código aberto e ter sido 
+fortemente examinado pelo público contribuem para sua reputação como um dos melhores protocolos de criptografia.
+
+_______________________________________________________________________________________________________________________
+
+Como transmitir informações de forma mais segura utilizando o conceito de encriptação: a cifra moderna;
+Os conceitos de chaves compartilhadas, públicas e privada. Sendo as compartilhadas um sistema de criptografia que 
+mantém a chave entre o emissor e receptor da mensagem, ou seja, a mesma chave é utilizada para encriptar e desencriptar 
+a mensagem ou arquivo; Já a chave pública funciona em conjunto com a privada, e atua como uma assinatura digital, ela pode 
+ser compartilhada; Por outro lado, a chave privada é mantida em segredo e utilizada para desencriptar as mensagens ou arquivos 
+autenticados pela chave pública;
+Como a encriptação simétrica e assimétrica usam essas chaves para decifrar as mensagens de forma prática e segura;
+A implementar essas funcionalidades dentro do Node com o módulo crypto.
+
+_______________________________________________________________________________________________________________________
+
+No mundo físico, a autenticidade de um documento pode ser garantida pelo uso de assinaturas, rubricas, carimbos, entre 
+outros métodos de autenticação mecânica. No contexto digital, surgiu a necessidade de se criar um sistema similar que 
+permitisse criar arquivos e documentos e garantir a sua integridade e autoria. Considerando o que foi visto até aqui 
+no curso, o que podemos afirmar sobre o processo de assinatura digital?
+
+A assinatura digital é uma forma de autenticar algum dado utilizando conceitos da encriptação assimétrica, criando um 
+par de chaves para a assinatura e verificação desses dados de forma digital.
+
+
+Isso mesmo! A chave privada cria uma assinatura do documento, enquanto a chave pública permite realizar a verificação 
+daquele documento.
+
+_______________________________________________________________________________________________________________________
+
+O time de desenvolvimento da empresa “Arara Azul” mantém uma API em um projeto para que a população possa contribuir 
+com informações sobre focos de queimadas. Para isso, os usuários precisam realizar um cadastro em uma plataforma web.
+
+A liderança técnica da empresa então sugeriu a utilização de tokens JWT para a autenticação e compartilhou as chaves 
+públicas e privadas para os usuários poderem criar os tokens ao submeterem as suas credenciais.
+
+Em um dos testes realizados foi possível observar o payload de um token JWT chegando ao servidor da seguinte forma 
+(considere a data atual como 17/06/2022):
+
+{
+    “usuario”: “James”,
+    “id”: 1337,
+    “validade-token”: “2d”,
+    “data-emissao”: “16/06/2022”
+}COPIAR CÓDIGO
+Quais afirmações devemos levar em consideração para os próximos passos desse projeto?
+
+A equipe compartilhou a chave privada e isso permitirá a assinatura de tokens por terceiros, a chave privada nunca 
+deve ser compartilhada.
+
+Exatamente! Há uma falha crítica de segurança, pois a chave privada é quem cria a hash e guarda o certificado digital.
+
+_______________________________________________________________________________________________________________________
+
+No último vídeo fizemos uso dos tokens JWT. Uma informação muito importante que precisamos saber é que não 
+necessariamente todos os tokens são criptografados. O cabeçalho e payload de um Token JWT comum passa apenas por uma 
+codificação em base64, ou seja, ele é reescrito em um formato mais compacto, mas que pode ser facilmente retornado ao 
+seu conteúdo original.
+
+Ou seja, a assinatura nesse contexto apenas contribui para verificarmos a autenticidade e integridade do token. Então 
+guardamos a chave secreta para que outras pessoas não possam assinar os tokens, e não para que não seja possível ler 
+o conteúdo em si.
+
+Um teste que você pode realizar é criar um token em uma plataforma como o jwt.io e depois copiar e colar o seu conteúdo 
+em um outro site para ler qual o conteúdo está salvo naquele JWT sem fornecer a senha secreta da assinatura, como no 
+site token.dev.
+
+Existem variações do token que também utilizam criptografia, e você pode conhecê-las aqui.
+
+_______________________________________________________________________________________________________________________
+
+Nesta aula, vimos um uso do JWT (JSON Web Token) no contexto da web. O JWT é um modelo bem comum de autenticação, 
+definido pelo RCT 7519, um padrão que define o seu funcionamento.
+
+No mundo da programação, quando trabalhamos com API e requisições, a necessidade de segurança é sempre presente, 
+por isso que a pessoa desenvolvedora precisa estar por dentro das melhores práticas para deixar seu código seguro 
+na transmissão de dados e informações.
+
+Aqui na plataforma temos outros conteúdos que tratam sobre o JWT:
+
+https://cursos.alura.com.br/extra/alura-mais/o-que-e-json-web-token-jwt--c203
+
+https://www.alura.com.br/artigos/o-que-e-json-web-tokens
+
+_______________________________________________________________________________________________________________________
+
+As maneiras mais fáceis de armazenar um token JWT no lado do cliente são o localStorage e o sessionStorage.
+
+A maioria das pessoas tende a armazenar seus JWTs no localStorage do navegador web, porém essa tática deixa seus aplicativos 
+abertos a um ataque chamado XSS. Nesse tipo de ataque, um invasor aproveita o fato de que o armazenamento local é acessível por 
+qualquer código JavaScript executado no mesmo domínio da aplicação. Assim, por exemplo, se o invasor encontrar uma maneira de 
+injetar código JavaScript mal-intencionado em seu aplicativo, seu token JWT estará imediatamente disponível para eles. Portanto, 
+se deseja segurança em suas aplicações, não armazene um JWT no localStorage.
+
+Mas e no sessionStorage? Assim como o localStorage, o armazenamento de sessão é acessível por qualquer código JavaScript 
+executado no mesmo domínio em que o seu aplicativo está hospedado. Portanto, a única diferença entre os dois é que no sessionStorage, 
+quando um usuário fecha o navegador, o JWT desaparecerá e o usuário terá que fazer login novamente em sua próxima visita ao aplicativo 
+web. Portanto, evite também armazenar um JWT no sessionStorage.
+
+A forma mais segura, se bem implementada, é utilizar cookie httpOnly para armazenar tokens JWT. Este é um tipo especial de cookie 
+que é enviado apenas em solicitações HTTP para o servidor. Nunca é acessível (tanto para leitura quanto para escrita) a partir do 
+JavaScript em execução no navegador e pode ter uma data de expiração definida.
+
+Então, para manter tokens JWT seguros, é recomendável utilizar cookies httpOnly.
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Cookies#cookies_secure_e_httponly
+
+_______________________________________________________________________________________________________________________
+
+Como funcionam as assinaturas no contexto digital para garantir a autoria e integridade de uma mensagem;
+O que é uma sessão e algumas formas como elas são implementadas - os identificadores únicos ou tokens;
+O que são tokens e como eles são utilizados para autenticação ou transmissão de informação de forma segura;
+O que é o token JWT. Seus parâmetros, campos e usos;
+Como implementar uma assinatura com o Node e utilizar uma biblioteca para utilizar o token JWT.
+
+_______________________________________________________________________________________________________________________
+
+Quanto tempo leva para descobrir sua senha?
+
+No ano de 2021, houve um ataque hacker histórico aos sistemas governamentais brasileiros. De acordo com a revista 
+digital The Hack, um número de 3,28 bilhões de senhas que estavam vinculadas a 2,18 bilhões de emails foram expostas 
+de forma gratuita em fórum cibercriminoso.
+
+Mas o interessante nesse acontecimento é que o vazamento de senhas não está relacionado somente a quantidade de 
+caracteres presentes na senha escolhida, mas o comportamento do usuário também influencia no processo de crack (quebra). 
+Por exemplo, ocorre a identificação de padrões via dados pessoais, devido ao uso de data de nascimento ou seu próprio CPF
+ como senha, assim como a prática de utilização da mesma senha em diferentes locais, ou mesmo manter a mesma senha por 
+ longos períodos.
+
+Sendo assim, precisamos entender que a tecnologia voltada para quebra de senhas também se relaciona com a capacidade de
+ hardware. Em outras palavras, os processadores, GPU e CPU, evoluíram muito para melhorar a segurança mas tornou mais acessível
+  o processo de descriptografia. Além disso, os algoritmos também foram melhorados a fim de otimizar ambos os processos.
+
+Até agora entendemos que hardware, software e lógica estão associados a quebra de senhas, mas quais estratégias ou qual
+ postura nós, como usuários comuns, podemos adotar para nos prevenir dessas armadilhas?
+
+Agora reflita: quando você cria uma senha, costuma pensar no quão fácil ela é de ser quebrada? Quantos caracteres possui?
+ Apresenta caracteres especiais? Apresenta números? Letras maiúsculas e minúsculas? Pois saiba que alguns desses aspectos
+  podem influenciar sua segurança.
+
+A companhia Hive Systems mapeou o tempo que hackers podem levar para quebrar sua senha em um ataque de força bruta.
+ Confira abaixo a tabela traduzida:
+
+A tabela apresenta uma coluna com o número de caractereres a partir do 4 e outras colunas respectivamente: “somente
+ números”; letras minúsculas, letras maiúsculas e minúsculas, números e letras maiúsculas, números e Letras maiúsculas
+  e símbolos. A tabela mostra que senhas somente com números são muito fáceis de serem quebradas e que a dificuldade
+   vai aumentando a partir da quantidade de caracteres e variação de elementos.
+
+Fonte: Tradução por Tripletech
+
+Você pode conferir a publicação original aqui: Time it takes a hacker to brute force your password.
+
+Esse artigo desconsidera a previsibilidade humana ao escolher senhas, mas nos ajuda a ilustrar como determinadas regras
+ e requisitos de senhas afetam a quantidade de combinações de caracteres existentes. Apesar da combinação “Senha123456”
+  estar listada como demorando 41 anos, provavelmente seria descoberta em segundos por um ataque um pouco mais elaborado.
+
+Então, como podemos nos proteger?
+
+A iniciativa how secure is my password esclarece que a “senha mais segura do mundo” não existe, até porque se todos
+ soubessem qual seria, todos a usariam e segredo compartilhado não é mais secreto, certo?
+
+Por outro lado, temos um artigo que lista algumas boas práticas para serem tomadas do lado do usuário, confira:
+
+Artigo - Como criar uma boa senha
+Que tal checar quanto tempo sua senha sobrevive a um ataque de força bruta? O Kaspersky Password Checker oferece o
+ serviço de forma gratuita e em português.
+
+Se quiser se aprofundar um pouco mais nesse assunto - e saber as referências que utilizamos - listamos alguns sites
+ e conteúdos bem legais:
+
+Imagem Tabela
+
+How secure is my password
+
+Hive System password table
+
+Quanto tempo um computador precisa para quebrar sua senha
+
+The hack - Maior vazamento de senhas da internet
+
+Quanto tempo leva para um hacker descobrir a sua senha?
+
+_______________________________________________________________________________________________________________________
+
+Para saber mais: alguns recursos de segurança
+
+Quanto mais nos aprofundamos no assunto segurança, as dúvidas e preocupações começam a surgir em relação ao vazamento 
+de informações, nível de confiabilidade de autenticação ou mesmo se nossa senha é realmente segura. A solução para esse 
+problema é conhecer diferentes tecnologias e técnicas já existentes para proteção de nossos dados na web.
+
+Aqui você encontra uma coletânea de artigos, Alura+ e podcasts para você conhecer um pouco mais. Vamos lá?
+
+Para nos aprofundarmos sobre as tecnologias:
+Artigo “Tipos de Autenticação: Senha, Token, JWT, Dois Fatores e Mais”
+Artigo “O que é JSON Web Tokens”
+Alura+ “O que é Json Web Token (JWT)?”
+Aqui conheceremos ferramentas muito úteis e estratégias para fortalecer nossas senhas:
+Artigo “O que é e como usar um gerenciador de senhas”
+Artigo “Como criar uma boa senha?”
+Importante manusear tecnologias a favor do desenvolvedor:
+Artigo “Como armazenar senhas no banco de dados de forma segura”
+Artigo “O que é cibersegurança: boas práticas e as equipes de segurança”
+Artigo “SQL Injection”
+É imprescindível conhecer sobre segurança da Informação com um olhar mais generalista
+Podcast “Segurança da Informação- Hipsters Ponto Tech #262”
+Podcast “Segurança da Informação: muito além do Telegram – Hipsters #159”
+Alura Live “Ataques Hacker, vulnerabilidade, segurança de dados - SI”
+Vamos aprofundar nosso conhecimento com os cursos?
+Curso Segurança de redes: protegendo dados com VPNs
+Curso Segurança de redes: conheça as vulnerabilidades de servidores e clientes
+Formação Segurança de aplicações
+
+_______________________________________________________________________________________________________________________
+
+Douglas teve acesso a uma planilha que continha diversas senhas comuns utilizadas pela população de sua cidade. 
+Douglas então resolveu utilizar essas senhas comuns para realizar um ataque a um sistema ao qual lhe interessava 
+ter acesso; para isso, ele utilizou a linguagem JavaScript, guardou as senhas em uma lista e fez o seguinte código:
+
+
+function testaLogin(user, senhaDoUser){
+ //função que chama uma API de login
+}
+
+senhasComuns.map(senha => {
+ if (testaLogin("admin", senha)){
+  console.log(“Tentativa bem sucedida”);
+  console.log(`A senha do usuário é ${senha}`)
+  }
+})COPIAR CÓDIGO
+Analisando o trecho de código acima, bem como o enunciado da questão, marque a alternativa que representa o tipo de 
+ataque realizado por Douglas, de acordo com o que foi visto até aqui no curso
+
+Ataque de dicionário.
+Isso mesmo! No ataque de dicionário utilizamos senhas comuns para tentar acesso a sistemas.
+
+_______________________________________________________________________________________________________________________
+
+O que são exatamente os algoritmos criptográficos e quais parâmetros existem em cada um;
+Alguns ataques (Rainbow Table, Força Bruta e Dicionário) e as vulnerabilidades que podemos estar sujeitos e devemos 
+ter atenção enquanto implementamos soluções;
+Quais recursos e atitudes podemos utilizar para mitigar problemas relacionados à nossa infraestrutura tecnológica.
+
+_______________________________________________________________________________________________________________________
+
+Além dos conteúdos da plataforma que já recomendamos no curso, também gostaria de mostrar outros recursos interessantes 
+que você pode encontrar na web e que vão agregar ao seu conhecimento técnico no ramo de segurança, vamos conhecê-los:
+
+Existe um projeto internacional chamado “‘;--have i been pwned”, que contabiliza e alerta sobre brechas de informações 
+que podem ter afetado os usuários dos mais diversos serviços. Você pode inserir o e-mail que costuma usar em cadastros 
+para conferir se você foi vítima de algum vazamento de dados;
+Uma conta no twitter chamada @PWTooStrong frequentemente levanta discussões sobre o tema de requisitos de senha e 
+experiência do usuário (em inglês);
+Um arquivo chamado rockyou.txt contendo centenas de milhares de senhas em ordem descendente de frequência de uso pela 
+população. Existem diversas edições deste arquivo, mas garanta que nenhuma senha sua esteja nele!
+
+_______________________________________________________________________________________________________________________
+
+João é um desenvolvedor responsável pela segurança de sistemas na empresa XPTO. Para estimular um senso de segurança 
+dos funcionários, ele resolveu aplicar alguns requisitos na criação das senhas de login dos usuários nos computadores 
+da organização.
+
+Quais fatores ele deve considerar importantes nos requisitos? Selecione as alternativas:
+
+Critérios considerando variedade e limite mínimo de caracteres, criatividade e filtro que impeçam o uso de palavras 
+muito óbvias.
+
+
+Isso mesmo! Como vimos no vídeo, na criação de uma senha é importante usar estratégias de jogos de palavras criativas, 
+que fujam do óbvio e diminuam as chances de descobrirem seu login.
+
+Opções seguras de acesso para esquecimento de senha, perguntas secretas e indicação de gerenciadores de senhas.
+
+
+Isso mesmo! É importante considerar a possibilidade de esquecimento de senhas. Numa situação como essa, devem 
+existir opções seguras para efetuar o acesso ou alteração para um novo login. Os gerenciadores de senhas ajudam 
+a manter um nível alto de complexidade em cada senha diferente que usamos sem precisarmos nos preocupar em decorá-las.
+
+_______________________________________________________________________________________________________________________
+
+Enquanto estamos falando sobre fatores humanos na segurança digital, você já ouviu falar do termo “engenharia social”?
+
+Nós muitas vezes nos preocupamos muito em garantir a segurança dos dados dos nossos usuários através de senhas seguras, 
+criptografia moderna, entre vários outros recursos. Porém, muitas vezes, pessoas interessadas em subtrair dados ou 
+adquirir credenciais de acesso de terceiros não precisam “invadir sistemas” via ataques virtuais como nos filmes e 
+séries - elas se utilizam justamente do fator humano.
+
+Essas pessoas muitas vezes usam truques para fazer com que os próprios usuários divulguem voluntariamente informações 
+sigilosas, cliquem em links suspeitos ou instalem malwares em seus computadores/celulares.À essas técnicas, que são 
+basicamente psicológicas, chamamos de engenharia social. Elas não estão restritas ao universo de logins e senhas na 
+internet, mas podem ser utilizadas 100% na vida real para conseguir acesso a locais restritos, informações secretas 
+e/ou privilegiadas, para espionagem industrial e tudo o mais que envolva sigilo ou privacidade.
+
+É possível que você já tenha visto a engenharia social em ação em filmes, especialmente os de espionagem ou sobre 
+golpes. Um clássico do assunto é Prenda-me Se for Capaz, com Tom Hanks e Leonardo DiCaprio, mas existem vários outros. 
+Após aprender sobre o assunto, você já vai ser capaz de identificar algumas técnicas em filmes do gênero.
+
+Se interessou? O tema é vasto, mas você pode começar por este episódio do Hipsters.Tech sobre segurança da informação, 
+essa palestra da engenheira social Marina Ciavatta onde ela fala mais sobre a área, dá exemplos e ensina um pouco sobre 
+como se precaver, ou também essa palestra de uma pessoa que trabalha no ramo sobre táticas comuns (em inglês com legendas 
+em inglês).
+
+_______________________________________________________________________________________________________________________
+
+Fatores humanos e quais considerações devemos levar em conta quando estamos desenvolvendo sistemas;
+Como escolher requisitos de forma crítica e ponderar sobre as decisões de segurança;
+Os cuidados que devemos tomar com as dependências que utilizamos e tentar conhecer os riscos associados.
